@@ -1,0 +1,72 @@
+DELETE standardlayout
+
+PUT standardlayout
+{
+  "mappings":{
+    "standdoc": {
+       "properties": {
+          "standid":{"type":"text"},
+          "indexname": {"type": "text"},
+          "shardsnum": {"type": "long"},
+          "replicasnum": {"type": "long"},
+          "indexremark":{
+              "type":"text",
+              "analyzer": "ik_smart"
+          },
+          "createdate":{
+            "type":"date",
+             "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+          },
+           "iscreat":{"type":"text"},
+           "indexstatus":{"type": "long"}
+
+       }
+    }
+  }
+}
+
+
+
+DELETE standardfield
+
+PUT standardfield
+{
+  "mappings":{
+    "fielddoc": {
+       "properties": {
+          "fid":{"type":"text"},
+          "fieldname": {"type": "text"},
+          "fieldtype": {"type": "text"},
+          "analyzer": {"type": "text"},
+          "boots":{"type":"long"},
+          "standid":{"type":"text"},
+          "createdate":{
+            "type":"date",
+             "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+          }
+       }
+    }
+  }
+}
+
+
+DELETE standardqueryfield
+
+PUT standardqueryfield
+{
+  "mappings":{
+    "querydoc": {
+       "properties": {
+          "aid":{"type":"text"},
+          "queryfieldname": {"type": "text"},
+          "queryanalyzer": {"type": "text"},
+          "querybool": {"type": "text"},
+          "standid":{"type":"text"},
+          "createdate":{
+            "type":"date",
+             "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+          }
+       }
+    }
+  }
+}
